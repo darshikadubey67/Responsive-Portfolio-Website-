@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hire Me | Darshika</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: radial-gradient(circle at top left, #1a1f2b, #0c0f1c);
+      color: #f0f0f0;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .stars-wrapper {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .star {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: floatStar 20s linear infinite;
+    }
+
+    .star:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+    .star:nth-child(2) { top: 30%; left: 70%; animation-delay: 2s; }
+    .star:nth-child(3) { top: 50%; left: 40%; animation-delay: 4s; }
+    .star:nth-child(4) { top: 80%; left: 60%; animation-delay: 6s; }
+    .star:nth-child(5) { top: 20%; left: 90%; animation-delay: 8s; }
+    .star:nth-child(6) { top: 60%; left: 10%; animation-delay: 10s; }
+    .star:nth-child(7) { top: 40%; left: 50%; animation-delay: 12s; }
+    .star:nth-child(8) { top: 70%; left: 30%; animation-delay: 14s; }
+    .star:nth-child(9) { top: 15%; left: 80%; animation-delay: 16s; }
+    .star:nth-child(10){ top: 85%; left: 25%; animation-delay: 18s; }
+
+    @keyframes floatStar {
+      0% { transform: translateY(0) scale(1); opacity: 0.8; }
+      50% { transform: translateY(-20px) scale(1.2); opacity: 1; }
+      100% { transform: translateY(0) scale(1); opacity: 0.8; }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: auto;
+      padding: 60px 20px;
+      animation: fadeIn 1.5s ease-in-out both;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 30px;
+      animation: slideIn 1.2s ease both;
+    }
+
+    .letter {
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 20px;
+      padding: 2rem;
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 6px 30px rgba(0,0,0,0.5);
+      animation: fadeIn 2s ease-in-out both;
+    }
+
+    .letter p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+
+    .cta-buttons {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .cta-buttons button {
+      padding: 0.9rem 1.6rem;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #00c2ff, #0077b6);
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      box-shadow: 0 0 14px rgba(0,194,255,0.4);
+    }
+
+    .cta-buttons button:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 18px rgba(0,194,255,0.8);
+    }
+
+    .quote {
+      text-align: center;
+      font-style: italic;
+      margin-top: 15px;
+      font-size: 1rem;
+      color: #ccc;
+      animation: fadeIn 2s ease-in-out 1.5s both;
+    }
+
+    .feedback-form, .surprise-box {
+      display: none;
+      margin-top: 30px;
+      background: rgba(255,255,255,0.03);
+      padding: 1.5rem;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.05);
+      animation: fadeIn 1.5s ease-in-out both;
+    }
+
+    .feedback-form h3 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .feedback-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .feedback-options label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .feedback-options label:hover {
+      transform: translateX(5px);
+    }
+
+    input[type="radio"] {
+      transform: scale(1.3);
+      accent-color: #00c2ff;
+    }
+
+    .animated-submit {
+      background: linear-gradient(135deg, #00c2ff, #0097a7);
+      color: white;
+      padding: 0.7rem 1.6rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      animation: bounce 1.5s infinite alternate;
+    }
+
+    .animated-submit:hover {
+      background: linear-gradient(135deg, #00acc1, #00838f);
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes slideIn {
+      from {opacity: 0; transform: translateY(50px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to { transform: translateY(-5px); }
+    }
+
+    .surprise-box p {
+      font-size: 1.1rem;
+      text-align: center;
+      margin-top: 10px;
+    }
+    #formMessage {
+      text-align: center;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="stars-wrapper">
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+  </div>
+
+  <div class="container">
+    <h1>🌟 Welcome to My Space</h1>
+    <div class="letter">
+      <p>
+        Dear Visitor,<br><br>
+        I truly appreciate you taking a moment to explore the possibility of working with me. It means a lot that you’re interested in what I bring to the table, and I want to assure you that this isn't just a career path for me—it’s a calling.<br><br>
+        Every project I take on is more than just lines of code or design elements. It's about understanding the problem, empathizing with the people behind it, and delivering something meaningful.<br><br>
+        I strive for continuous learning, sincere collaboration, and results that speak for themselves.<br><br>
+        Thank you again for your time. Let’s build something impactful.<br><br>
+        Best regards,<br>
+        <strong>Darshika Dubey</strong>
+      </p>
+
+      <div class="cta-buttons">
+        <button onclick="playSound(); window.open('https://open.spotify.com/', '_blank')">🎧 Open Spotify</button>
+        <button onclick="playSound(); window.location.href='index.html'">← Back to Portfolio</button>
+        
+  
+        <button onclick="playSound(); toggleFeedback()">💬 Give Feedback</button>
+        <button onclick="playSound(); toggleSurprise()">🎁 Surprise Me</button>
+      </div>
+
+      <div class="quote">“Take a break. Let the music carry you.”</div>
+
+      <form id="feedbackForm" class="feedback-form">
+        <h3>💬 What do you think?</h3>
+        <div class="feedback-options">
+          <label><input type="radio" name="feedback" value="LikeIt" /> 👍 I like it!</label>
+          <label><input type="radio" name="feedback" value="LoveDesign" /> 💖 Looks Unique</label>
+        <p id="formMessage"></p>
+          <label><input type="radio" name="feedback" value="CouldBeSimpler" /> 🧩 Could Be Simpler</label>
+        </div>
+        <button type="submit" class="animated-submit">🚀 Submit</button>
+        <p id="formMessage"></p>
+      </form>
+
+      <div id="surpriseBox" class="surprise-box">
+  <h3>💖 Here's Something Just for You</h3>
+  <p id="surpriseMessage">Click again for another kind thought.</p>
+</div>
+    </div>
+  </div>
+
+  <!-- Sound effect -->
+  <audio id="clickSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_659c3b7674.mp3?filename=click-124467.mp3" preload="auto"></audio>
+
+  <script>
+  function playSound() {
+    document.getElementById('clickSound').play();
+  }
+
+  function toggleFeedback() {
+    const form = document.getElementById('feedbackForm');
+    form.style.display = form.style.display === 'block' ? 'none' : 'block';
+  }
+
+  function toggleSurprise() {
+    const box = document.getElementById('surpriseBox');
+    box.style.display = box.style.display === 'block' ? 'none' : 'block';
+  }
+
+  document.getElementById('feedbackForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const selected = document.querySelector('input[name="feedback"]:checked');
+    const msg = document.getElementById("formMessage");
+
+    if (selected) {
+      msg.innerText = "🚀 Submitted successfully!";
+      msg.style.color = "#00e676";
+
+      // Delay hiding the form for a smooth UX
+      setTimeout(() => {
+        document.getElementById('feedbackForm').style.display = 'none';
+        msg.innerText = ""; // Clear message after hiding
+        this.reset();       // Reset form inputs
+      }, 1500);
+    } else {
+      msg.innerText = "⚠️ Please select an option.";
+      msg.style.color = "#ff5252";
+    }
+  });
+  function playSound() {
+    document.getElementById('clickSound').play();
+  }
+
+  function toggleFeedback() {
+    const form = document.getElementById('feedbackForm');
+    form.style.display = form.style.display === 'block' ? 'none' : 'block';
+  }
+
+  function toggleSurprise() {
+    const box = document.getElementById('surpriseBox');
+    const message = document.getElementById('surpriseMessage');
+
+    const messages = [
+      "🌸 You’re doing better than you think. Keep going!",
+      "🌟 Someone out there is grateful you exist.",
+      "🌈 Your kindness might be the sunshine in someone’s cloudy day.",
+      "🍃 Take a deep breath. You’re allowed to rest.",
+      "💫 You bring something to the world no one else can.",
+      "🕊️ Peace begins with a gentle thought. You just had one.",
+      "🌻 You’re not behind. You’re on your own beautiful timeline.",
+      "🎨 The world needs your creativity. Don’t hold back.",
+      "🌷 You matter. More than you know.",
+      "☀️ Even the smallest light can brighten the darkest space."
+    ];
+
+    const random = messages[Math.floor(Math.random() * messages.length)];
+    message.innerHTML = random;
+
+    box.style.display = 'block';
+  }
+
+  document.getElementById('feedbackForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const selected = document.querySelector('input[name="feedback"]:checked');
+    const msg = document.getElementById("formMessage");
+
+    if (selected) {
+      msg.innerText = "🚀 Submitted successfully!";
+      msg.style.color = "#00e676";
+
+      setTimeout(() => {
+        document.getElementById('feedbackForm').style.display = 'none';
+        msg.innerText = "";
+        this.reset();
+      }, 1500);
+    } else {
+      msg.innerText = "⚠️ Please select an option.";
+      msg.style.color = "#ff5252";
+    }
+  });
+</script>
+</body>
+</html>

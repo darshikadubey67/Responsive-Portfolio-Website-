@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Chatbot Features & Live Demo | Darshika Portfolio</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <style>
+    body {
+      background: #121212;
+      color: #e0e0e0;
+      font-family: 'Outfit', sans-serif;
+      margin: 0; padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    header {
+      padding: 2rem 1rem;
+      text-align: center;
+      border-bottom: 1px solid #333;
+      width: 100%;
+      max-width: 900px;
+    }
+    header h1 {
+      color: #00d2ff;
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      animation: fadeInDown 1s ease forwards;
+    }
+    header p {
+      color: #a0a0a0;
+      font-size: 1.1rem;
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.5s;
+    }
+    main {
+      max-width: 900px;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      animation: fadeIn 1.5s ease forwards;
+    }
+    section {
+      background: #1e1e1e;
+      border-radius: 12px;
+      padding: 1.8rem 2rem;
+      box-shadow: 0 0 20px rgba(0,210,255,0.25);
+      transition: box-shadow 0.3s ease;
+    }
+    section:hover {
+      box-shadow: 0 0 30px rgba(0,210,255,0.5);
+    }
+    section h2 {
+      color: #00d2ff;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    section ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    section ul li {
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+      position: relative;
+      padding-left: 24px;
+      line-height: 1.4;
+    }
+    section ul li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: #00d2ff;
+      font-weight: bold;
+      font-size: 1.2rem;
+      top: 0;
+      line-height: 1.4;
+    }
+/* Chatbot box */
+    #chatbot {
+      background: #1e1e1e;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #00d2ffaa;
+      width: 100%;
+      max-width: 600px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 0.6s;
+      opacity: 0;
+    }
+
+    #chat-output {
+      flex: 1;
+      padding: 16px;
+      overflow-y: auto;
+      color: #eee;
+      font-size: 1rem;
+      background: #121212;
+    }
+
+    #chat-input-container {
+      display: flex;
+      border-top: 1px solid #00f7ff55;
+      background: #222;
+    }
+
+    #chat-input {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      background: #1a1a1a;
+      color: #00f7ff;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    #send-btn {
+      padding: 12px 20px;
+      background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+      border: none;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    #send-btn:hover {
+      background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+    }
+
+    /* Back button */
+    #back-btn {
+      margin-top: 30px;
+      background: transparent;
+      border: 2px solid #00f7ff;
+      color: #00f7ff;
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      width: max-content;
+    }
+
+    #back-btn:hover {
+      background: #00f7ff;
+      color: #121212;
+    }
+
+    /* Chatbot container style */
+    #chatbotContainer {
+      background: #222;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,210,255,0.3);
+      padding: 1rem;
+      max-width: 900px;
+      margin: 0 auto 3rem auto;
+      height: 450px;
+      display: flex;
+      flex-direction: column;
+    }
+    /* You can style your chatbot UI inside #chatbotContainer */
+    /* This depends on your existing chatbot.js implementation */
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      main {
+        padding: 1rem;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      section h2 {
+        font-size: 1.5rem;
+      }
+      #chatbotContainer {
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AI Chatbot Features & Live Demo</h1>
+    <p>Discover the capabilities of the AI chatbot embedded in my portfolio — and try it out live below.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Core Capabilities</h2>
+      <ul>
+        <li>Natural language understanding for dynamic visitor interaction</li>
+        <li>Instant responses with no backend server required</li>
+        <li>Easy integration with portfolio using client-side JavaScript</li>
+        <li>Custom scripted knowledge for portfolio-specific FAQs</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>User Experience</h2>
+      <ul>
+        <li>Floating chat button for quick access</li>
+        <li>Responsive and intuitive chat interface</li>
+        <li>Typing animations and smooth scroll for chat bubbles</li>
+        <li>Persistent conversation during session for continuous support</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Technical Highlights</h2>
+      <ul>
+        <li>Lightweight, vanilla JavaScript implementation</li>
+        <li>Asynchronous message handling with smooth UI updates</li>
+        <li>Expandable for future AI backend integrations</li>
+        <li>Privacy-first approach with no data sent to external servers</li>
+      </ul>
+    </section>
+
+  <div id="chatbot" aria-label="AI Chatbot interface">
+    <div id="chat-output" role="log" aria-live="polite" aria-relevant="additions"></div>
+    <div id="chat-input-container">
+      <input type="text" id="chat-input" placeholder="Type your message here..." aria-label="Chat input" />
+      <button id="send-btn" aria-label="Send message">Send</button>
+    </div>
+  </div>
+
+  <a href="index.html" id="back-btn">← Back to Portfolio</a>
+
+  <script>
+    const chatOutput = document.getElementById('chat-output');
+    const chatInput = document.getElementById('chat-input');
+    const sendBtn = document.getElementById('send-btn');
+
+    // Sample simple chatbot response logic
+    function getBotResponse(message) {
+      const msg = message.toLowerCase();
+      if (msg.includes('hello') || msg.includes('hi')) {
+        return "Hello! How can I assist you with my portfolio today?";
+      }
+      if (msg.includes('features')) {
+        return "This AI Chatbot can answer your questions, provide info about my projects, and guide you through the website!";
+      }
+      if (msg.includes('contact')) {
+        return "You can contact me via the Contact page — just click 'Hire Me' or the contact form in the portfolio.";
+      }
+      if (msg.includes('thanks') || msg.includes('thank you')) {
+        return "You're welcome! Feel free to ask anything else.";
+      }
+      return "I'm here to help! Try asking about my projects, skills, or how to contact me.";
+    }
+
+    // Append message to chat output
+    function appendMessage(sender, text) {
+      const msgElem = document.createElement('div');
+      msgElem.textContent = text;
+      msgElem.style.padding = '8px 12px';
+      msgElem.style.margin = '6px';
+      msgElem.style.borderRadius = '10px';
+      msgElem.style.maxWidth = '80%';
+      if (sender === 'user') {
+        msgElem.style.backgroundColor = '#00d2ff';
+        msgElem.style.color = '#121212';
+        msgElem.style.alignSelf = 'flex-end';
+      } else {
+        msgElem.style.backgroundColor = '#222';
+        msgElem.style.color = '#eee';
+        msgElem.style.alignSelf = 'flex-start';
+      }
+      chatOutput.appendChild(msgElem);
+      chatOutput.scrollTop = chatOutput.scrollHeight;
+    }
+
+    // Send message handler
+    function sendMessage() {
+      const userMsg = chatInput.value.trim();
+      if (!userMsg) return;
+      appendMessage('user', userMsg);
+      chatInput.value = '';
+      setTimeout(() => {
+        const botReply = getBotResponse(userMsg);
+        appendMessage('bot', botReply);
+      }, 600);
+    }
+
+    sendBtn.addEventListener('click', sendMessage);
+    chatInput.addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        sendMessage();
+      }
+    });
+  </script>
+
+    <!-- Live chatbot container -->
+    <div id="chatbotContainer"></div>
+  </main>
+
+  <!-- Your existing chatbot scripts here -->
+  <script src="js/chatbot.js"></script>
+
+</body>
+</html>

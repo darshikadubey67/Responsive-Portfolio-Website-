@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Responsive Portfolio Website | Darshika</title>
+</head>
+
+<body>
+  <nav>
+    <div class="nav__bar">
+      <a href="#" title="Go to homepage"><span class="logo nav__logo">D</span> Darshika</a>
+      <div class="nav__menu__btn" id="menu-btn">
+        <i class="ri-menu-3-line"></i>
+      </div>
+    </div>
+
+    <ul class="nav__links" id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills & Strengths</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+
+      <li><a href="#contact" class="btn contact-pulse-btn">Contact</a></li>
+    </ul>
+
+    <a href="#contact" class="btn contact-pulse-btn">Contact</a>
+  </nav>
+
+  <header class="section__container header__container" id="home"></header>
+  <div class="header__image">
+    <img src="assets/header.jpg" alt="header" />
+  </div>
+  <div class="header__content">
+    <div>
+      <h1>Darshika<br />Web Developer<br />Designer</h1>
+    </div>
+    <p class="section__description">
+      A curious mind with a developer’s heart, I’m <strong>Darshika</strong> — a <strong>BCA student at GLA
+        University, Mathura</strong> with a clear goal: to become a skilled and innovative developer. I’m exploring
+      the full potential of code, learning through hands-on experience, and building a foundation for a career shaped
+      by curiosity and impact.
+    </p>
+
+    <div class="header__btn" style="margin-left: 60px;">
+      <button class="btn hire-me-animate" onclick="window.open('hire.html', '_blank')">Hire Me Now</button>
+    </div>
+  </div>
+  </header>
+
+  <section class="section__container about__container animate-section" id="about">
+    <div class="about__image">
+      <img src="assets/bg.png" alt="bg" class="about__bg-1" />
+      <img src="assets/bg.png" alt="bg" class="about__bg-2" />
+      <img src="assets/about.jpg" alt="about" class="about__img" />
+    </div>
+    <div class="about__content">
+      <h2 class="section__header"> About Me</h2>
+      <p class="section__description">
+        I believe in people—their quiet strength, untold stories, and the light they carry, even when it flickers.
+        Empathy shapes how I build, connect, and understand. I don’t seek perfection—I show up with sincerity, with
+        heart. Curiosity keeps me moving, kindness keeps me rooted, and my faith in goodness runs deep. It’s how I make
+        sense of everything.
+        And somewhere between the heart and the hustle, I find joy in using tech to bring thoughtful ideas to life.
+      </p>
+      <section class="section__container" id="skills">
+        <!-- insert the improved HTML block here -->
+      </section>
+      <section class="section__container animate-section" id="skills">
+        <h2 class="section__header">Skills & Strengths</h2>
+        <p class="section__description">
+          In addition to my academic journey and creative passion for web development, I bring a blend of technical
+          skills and interpersonal strengths that support my growth as a future software professional.
+        </p>
+
+        <div class="skills__grid">
+          <div class="skills__block">
+            <h4>💻 Technical Proficiency</h4>
+            <ul>
+              <li><i class="ri-check-line"></i> <strong>Web Development:</strong> HTML, CSS</li>
+              <li><i class="ri-check-line"></i> <strong>Programming:</strong> Java, Python, C</li>
+              <li><i class="ri-check-line"></i> <strong>Problem-Solving:</strong> Data Structures & Algorithms (in C)
+              </li>
+              <li><i class="ri-check-line"></i> <strong>Databases:</strong> DBMS, basic system design understanding</li>
+            </ul>
+          </div>
+
+          <div class="skills__block">
+            <h4>🌱 Soft Skills</h4>
+            <ul>
+              <li><i class="ri-check-line"></i> Empathetic communicator who values clarity and connection</li>
+              <li><i class="ri-check-line"></i> Adaptable and quick to learn new tools and concepts</li>
+              <li><i class="ri-check-line"></i> Collaborative mindset with a strong sense of responsibility</li>
+              <li><i class="ri-check-line"></i> Driven by curiosity, creativity, and emotional intelligence</li>
+            </ul>
+          </div>
+        </div>
+    </div>
+    <div class="about__btn">
+      <a href="https://docs.google.com/document/d/e/2PACX-1vTTLL3TjoVHDZE5FotIjlw2zBSsEOY4bG_c973NC7aU6Ruwn7W-R59Sq-MdTpMb-SS2vAmPNE6w1HTS/pub"
+        class="btn download-btn" target="_blank" rel="noopener noreferrer">
+        <i class="ri-download-line"></i> View Resume
+      </a>
+    </div>
+
+    </div>
+  </section>
+
+  <section class="section__container service__container" id="service">
+    <h2 class="section__header">What Makes My Projects Stand Out</h2>
+    <div class="service__grid">
+      <div class="service__card">
+        <span><i class="ri-window-fill"></i></span>
+        <h4>Separate Interactive 'Hire Me' Page</h4>
+        <p>
+          A dedicated, animated, and responsive page focused on conversion — not just contact.
+        </p>
+      </div>
+      <div class="service__card">
+        <span><i class="ri-store-line"></i></span>
+        <h4>EmailJS-Powered Contact Form</h4>
+        <p>
+          Send messages instantly from the browser — no backend needed. Reliable, smooth, secure.
+        </p>
+      </div>
+      <div class="service__card">
+        <span><i class="ri-smartphone-line"></i></span>
+        <h4>AI Chatbot Embedded</h4>
+        <p>
+          An AI-driven chatbot that engages visitors, answers queries, and
+          enhances user experience without the need for a dedicated backend.
+        </p>
+      </div>
+      <div class="service__card">
+        <span><i class="ri-share-fill"></i></span>
+        <h4>📂 Download Resume </h4>
+        <p>
+          A downloadable resume link that opens in a new tab, ensuring easy access to my professional background.
+        </p>
+      </div>
+      <div class="service__card">
+        <span><i class="ri-seo-line"></i></span>
+        <h4>“Responsive Design with Audible Touch”</h4>
+        <p>
+          Sound adds depth to interaction—making every click feel intentional. </p>
+      </div>
+      <div class="service__card">
+        <span><i class="ri-share-circle-line"></i></span>
+        <h4>📜 Custom Scrollbar Styling</h4>
+        <p>
+          Tailored scrollbar designs that enhance the overall aesthetic and
+          usability of your website, ensuring a unique browsing experience.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section__container portfolio__container" id="portfolio">
+    <h2 class="section__header">My Portfolio</h2>
+    <p class="section__description">
+      Explore a showcase of my diverse projects, demonstrating my skills in
+      web development, design, and beyond. Each project reflects my passion
+      for creating impactful and innovative digital experiences.
+    </p>
+    <div class="portfolio__grid">
+      <div class="portfolio__card">
+        <h3>AI-Powered Chatbot Features</h3>
+        <p>Smart chatbot — natural replies, 24/7 support.</p>
+        <a href="chatbot.html" class="btn" target="_blank">View Demo</a>
+
+      </div>
+      <div class="portfolio__card">
+        <h3>Responsive Contact Form Features</h3>
+        <p>EmailJS-powered form for hassle-free messaging and quick responses.</p>
+        <a href="contact.html" class="btn" target="_blank">View Highlights</a>
+      </div>
+      <div class="portfolio__card">
+        <h3>Hire Me Page Features</h3>
+        <p>Explore visitor messaging, Spotify integration, live feedback, and animated surprises.</p>
+        <a href="hire-features.html" target="_blank" class="btn">View Features</a>
+      </div>
+
+      <!-- Add more portfolio cards as needed -->
+    </div>
+
+    </div>
+  </section>
+
+  <section class="section__container contact__container" id="contact">
+    <div class="logo">D</div>
+    <h2 class="section__header">Let's Connect With Me!</h2>
+    <p class="section__description">
+      An open invitation to connect, and exploring collaborative opportunities
+      on my personal portfolio website.
+    </p>
+
+    <!-- Social Icons -->
+    <div class="contact__socials">
+      <a href="mailto:darshikadubey67@gmail.com" target="_blank" title="Send Email"><i class="ri-mail-line"></i></a>
+      <a href="https://www.linkedin.com/in/darshika-dubey-48b65b335" target="_blank" rel="noopener"
+        title="LinkedIn Profile"><i class="ri-linkedin-fill"></i></a>
+      <a href="https://github.com/darshikadubey67" target="_blank" rel="noopener" title="GitHub Profile"><i
+          class="ri-github-fill"></i></a>
+      <a href="https://wa.me/917985224518?text=Hi%20Darshika!" target="_blank" rel="noopener" title="WhatsApp Chat"><i
+          class="ri-whatsapp-line"></i></a>
+    </div>
+
+    <!-- Contact Form Section (same design, now right below icons) -->
+    <section id="contact-form" style="padding: 60px 20px;">
+      <br />
+      <br />
+      <h2 style="color: #00f7ff; font-size: 1.2rem; text-align: center; margin-bottom: 10px;">Got a project or idea in
+        mind? I'd love to hear from you.</h2>
+
+      <p style="color: #ccc; text-align: center; margin-bottom: 40px;">
+        [ Send me a message and I'll get back to you as soon as possible ]
+      </p>
+
+      <form id="contact-form" onsubmit="return sendEmail(this)" style="max-width: 520px; margin: 0 auto;">
+        <!-- Name -->
+        <div style="position: relative; margin-bottom: 1.5rem;">
+          <i class="ri-user-line"
+            style="position: absolute; top: 14px; left: 15px; color: #00ffff; animation: pulse 2s infinite;"></i>
+          <input type="text" name="user_name" placeholder="Your Name" required
+            style="width: 100%; padding: 12px 12px 12px 45px; background: #1e1e1e; border: 1px solid #444; color: #fff; border-radius: 10px;" />
+        </div>
+
+        <!-- Email -->
+        <div style="position: relative; margin-bottom: 1.5rem;">
+          <i class="ri-mail-line"
+            style="position: absolute; top: 14px; left: 15px; color: #00ffff; animation: pulse 2s infinite;"></i>
+          <input type="email" name="user_email" placeholder="Your Email" required
+            style="width: 100%; padding: 12px 12px 12px 45px; background: #1e1e1e; border: 1px solid #444; color: #fff; border-radius: 10px;" />
+        </div>
+
+        <!-- Message -->
+        <div style="position: relative; margin-bottom: 1.5rem;">
+          <i class="ri-message-line"
+            style="position: absolute; top: 14px; left: 15px; color: #00ffff; animation: pulse 2s infinite;"></i>
+          <textarea name="message" placeholder="Your Message" required
+            style="width: 100%; padding: 12px 12px 12px 45px; background: #1e1e1e; border: 1px solid #444; color: #fff; border-radius: 10px; resize: none; height: 140px;"></textarea>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" style="background: linear-gradient(135deg, #00d2ff, #3a7bd5); 
+         color: white; 
+         padding: 12px 24px; 
+         font-size: 16px; 
+         font-weight: bold; 
+         border: none; 
+         border-radius: 6px; 
+         cursor: pointer; 
+         transition: all 0.3s ease;">
+          Send Message
+        </button>
+
+        <p id="form-status"></p>
+      </form>
+    </section>
+
+    <!-- Pulse Animation -->
+    <style>
+      @keyframes pulse {
+        0% {
+          opacity: 1;
+          transform: scale(1);
+        }
+
+        50% {
+          opacity: 0.6;
+          transform: scale(1.1);
+        }
+
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    </style>
+  </section>
+
+  <!-- Click Sound -->
+  <audio id="click-sound" src="https://www.fesliyanstudios.com/play-mp3/387" preload="auto"></audio>
+
+  <script>
+    // Get the sound element
+    const clickSound = document.getElementById("click-sound");
+
+    // Function to play sound
+    function playClickSound(event) {
+      // Reset to start so it plays every time
+      clickSound.currentTime = 0;
+      clickSound.play().catch(() => {
+        // Ignore autoplay errors (if browser blocks before interaction)
+      });
+    }
+
+    // Add to ALL clickable elements (buttons, links, inputs)
+    document.querySelectorAll("button, a, input[type='submit']").forEach(element => {
+      element.addEventListener("click", playClickSound);
+    });
+  </script>
+
+  <!-- Floating AI Chat Button -->
+  <button id="openChatBtn">
+    💬 AI BOT
+  </button>
+
+  <!-- Chatbot Container -->
+  <div id="chatbotContainer"></div>
+
+  <!-- Footer -->
+  <footer class="footer" style="text-align: center; padding: 30px 0;  color: #999;">
+    Copyright © 2025 Portfolio Website. All rights reserved.
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/chatbot.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="main.js"></script>
+  <script src="js/email.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Form Features | Darshika</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <style>
+    body {
+      background: #121212;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 40px 20px;
+      margin: 0;
+    }
+    h1 {
+      text-align: center;
+      color: #00f7ff;
+      margin-bottom: 10px;
+      animation: fadeInDown 1s ease forwards;
+    }
+    p.description {
+      max-width: 600px;
+      margin: 0 auto 40px;
+      text-align: center;
+      color: #ccc;
+      font-size: 1.1rem;
+      animation: fadeIn 2s ease forwards;
+    }
+    ul.features-list {
+      max-width: 700px;
+      margin: 0 auto;
+      list-style: none;
+      padding: 0;
+    }
+    ul.features-list li {
+      background: #222;
+      margin-bottom: 20px;
+      padding: 20px 25px;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      box-shadow: 0 0 15px #00f7ff44;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      animation: slideInLeft 0.7s ease forwards;
+      opacity: 0;
+    }
+    ul.features-list li:nth-child(1) { animation-delay: 0.2s; }
+    ul.features-list li:nth-child(2) { animation-delay: 0.4s; }
+    ul.features-list li:nth-child(3) { animation-delay: 0.6s; }
+    ul.features-list li:nth-child(4) { animation-delay: 0.8s; }
+    ul.features-list li:nth-child(5) { animation-delay: 1s; }
+
+    ul.features-list li i {
+      color: #00f7ff;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Button to go back */
+    .back-btn {
+      display: block;
+      max-width: 160px;
+      margin: 40px auto 0;
+      padding: 12px 25px;
+      text-align: center;
+      color: #121212;
+      background: #00f7ff;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 12px #00f7ffaa;
+      transition: background-color 0.3s ease;
+    }
+    .back-btn:hover {
+      background: #00c7d8;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Contact Form Features</h1>
+  <p class="description">Explore the powerful features built into my contact form to provide a seamless and interactive user experience.</p>
+
+  <ul class="features-list">
+    <li><i class="ri-mail-send-line"></i> <strong>EmailJS Integration:</strong> Send messages directly from the browser with no backend required.</li>
+    <li><i class="ri-loader-2-line"></i> <strong>Loading and Feedback:</strong> Users get instant feedback while the message is sending.</li>
+    <li><i class="ri-check-line"></i> <strong>Validation:</strong> Required fields with real-time validation to ensure completeness.</li>
+    <li><i class="ri-shield-check-line"></i> <strong>Security:</strong> Safe message transmission without exposing sensitive backend details.</li>
+    <li><i class="ri-responsive-line"></i> <strong>Responsive Design:</strong> Works beautifully across devices and screen sizes.</li>
+  </ul>
+
+  <a href="index.html" class="back-btn">← Back to Portfolio</a>
+</body>
+</html>
